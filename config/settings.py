@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',         
-    'projects',     
+    'projects',
+    'tailwind',  # Añadimos la app de Tailwind
 ]
 
 
