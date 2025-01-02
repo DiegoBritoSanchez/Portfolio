@@ -38,8 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',         
-    'projects',
-    'tailwind',  # Añadimos la app de Tailwind
+    'projects'
 ]
 
 
@@ -110,18 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'es-ES'
 
-LANGUAGES = [
-    ('es', 'Español'),
-    ('en', 'English'),
-]
-
-LOCALE_PATHS = [
-    BASE_DIR / 'locale',  # Carpeta donde guardaremos las traducciones
-]
-
 TIME_ZONE = 'Europe/London'
-
-USE_I18N = True
 
 USE_TZ = True
 
@@ -130,6 +118,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR / "static"]
+
+# Añadir esta línea para solucionar el error
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

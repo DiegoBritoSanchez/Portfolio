@@ -1,12 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio | Mi Portafolio</title>
+    <title>{% block title %}Mi Portafolio{% endblock %}</title>
+    {% load static %}
+    <link href="{% static 'css/output.css' %}" rel="stylesheet">
 </head>
-<body>
-    <h1>{% block title %}{% trans "Bienvenido a mi Portafolio" %}{% endblock %}</h1>
-    <p>{% trans "Este sitio está en construcción" %}</p>    
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <nav class="bg-blue-500 p-4">
+        <div class="container mx-auto">
+            <h1 class="text-white text-3xl">Mi Portafolio</h1>
+        </div>
+    </nav>
+    <div class="container mx-auto mt-10">
+        {% block content %}{% endblock %}
+    </div>
 </body>
 </html>
