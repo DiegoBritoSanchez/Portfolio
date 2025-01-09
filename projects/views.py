@@ -1,6 +1,6 @@
-from django.shortcuts import render
+from django.http import JsonResponse
 from .models import Project
 
-def projects_list(request):
-    projects = Project.objects.all()
-    return render(request, 'projects/projects_list.html', {'projects': projects})
+def project_list(request):
+    projects = Project.objects.all().values()
+    return JsonResponse(list(projects), safe=False)
