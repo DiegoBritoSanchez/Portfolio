@@ -6,7 +6,12 @@ module.exports = {
     './projects/templates/**/*.html',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        DarkOrchid: "#9932CC",
+        Lavender: "#E6E6FA",
+      },
+    },
   },
   plugins: [],
 }
