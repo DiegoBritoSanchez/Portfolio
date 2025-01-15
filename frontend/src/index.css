@@ -28,11 +28,11 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  min-width: 100vw; /* Asegura que el ancho del body no exceda el viewport */
   min-height: 100vh;
+  overflow-x: hidden; /* Evita cualquier desbordamiento horizontal */
 }
+
 
 h1 {
   font-size: 3.2em;
