@@ -39,18 +39,19 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',         
-    'projects'
+    'projects',
+    'corsheaders',
 ]
 
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',  # Añadimos el middleware para el manejo de CORS
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.locale.LocaleMiddleware',  # Añadimos el middleware para el manejo de idiomas
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
@@ -133,3 +134,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Configuración de Archivos de Medios (Imágenes)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Configuración de CORS
+CORS_ALLOW_ALL_ORIGINS = True # True para permitir todas las peticiones en desarrollo
+# CORS_ALLOWED_ORIGINS = [
+#     "http://127.0.0.1:5173",  # Dirección del frontend (React) cambiar cuando esté en producción
+# ]
