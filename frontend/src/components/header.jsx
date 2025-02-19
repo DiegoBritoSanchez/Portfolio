@@ -8,7 +8,7 @@ export default function Header() {
         </div>
         {/* Menú */}
         <ul className="flex space-x-6">
-          {["Home", "Acerca de Mi", "Proyectos", "Contacto"].map((item) => (
+          {["Home", "Acerca de Mi", "Contacto"].map((item) => (
             <li
               key={item}
               className="hover:text-gray-300 transition-colors cursor-pointer text-lg font-medium"

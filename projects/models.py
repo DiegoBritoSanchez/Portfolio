@@ -6,6 +6,7 @@ class Project(models.Model):
     description = models.TextField()
     technology = models.CharField(max_length=50)
     image = models.ImageField(upload_to='projects/')
+    github = models.URLField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def image_url(self):
@@ -20,6 +21,7 @@ class Project(models.Model):
             "description": self.description,
             "technology": self.technology,
             "image": self.image_url(),  # Aquí generamos la URL completa
+            "github": self.github,
         }
 
     def __str__(self):

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Body() {
   const [projects, setProjects] = useState([]); // Estado para los datos
@@ -15,21 +15,42 @@ export default function Body() {
     <main className="py-10">
       <div className="container mx-auto">
         <h2 className="text-3xl font-bold mb-6 text-center">Proyectos</h2>
-        <div className="grid gap-6 max-w-4xl mx-auto">
-          {projects.map((project) => (
-            <div
+        <div className="flex flex-col gap-8 mx-auto max-w-4xl">
+          {projects.map((project, index) => (
+            <a
               key={project.id}
-              className="bg-white p-6 rounded-lg shadow-md"
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer" // Seguridad
+              className="no-underline"
             >
-              <h3 className="text-xl font-bold">{project.title}</h3>
-              <p>{project.description}</p>
-              <p className="text-sm text-gray-500">Tecnología: {project.technology}</p>
-              <img
-                src={`http://localhost:8000${project.image}`}
-                alt={project.title}
-                className="mt-4 rounded-lg"
-              />
-            </div>
+              <div
+                className={`flex flex-col md:flex-row items-center bg-white p-6 rounded-lg shadow-md 
+            ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
+              >
+                {/* Imagen */}
+                {project.image && (
+                  <img
+                    src={`http://localhost:8000${project.image}`}
+                    alt={project.title}
+                    className="w-full md:w-1/3 h-40 object-cover rounded-lg"
+                  />
+                )}
+
+                {/* Contenido */}
+                <div
+                  className={`md:w-2/3 md:px-6 ${
+                    index % 2 !== 0 ? "text-right" : "text-left"
+                  }`}
+                >
+                  <h3 className="text-xl font-bold">{project.title}</h3>
+                  <p className="text-gray-700">{project.description}</p>
+                  <p className="text-sm text-gray-500">
+                    Tecnología: {project.technology}
+                  </p>
+                </div>
+              </div>
+            </a>
           ))}
         </div>
       </div>
