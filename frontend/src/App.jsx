@@ -1,19 +1,23 @@
-// import { useState, useEffect } from 'react';
-
-// import React from "react";
-import './index.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./index.css";  // Tailwind
 import Header from "./components/header";
+import Footer from "./components/footer";
 import Body from "./components/body";
-import Footer from './components/footer';
+import AboutMe from "./components/aboutMe";
 
-function App() {
-  return (
-    <div className="min-h-screen bg-[Lavender] text-black">
-      <Header />
-      <Body />
-      <Footer />
-    </div>
-  );
+export default function App() {
+    return (
+        <Router>
+            <div className="min-h-screen bg-[Lavender] text-black">
+                <Header />
+                <main className="container mx-auto py-10">
+                    <Routes>
+                        <Route path="/" element={<Body />} /> 
+                        <Route path="/about" element={<AboutMe />} /> 
+                    </Routes>
+                </main>
+                <Footer />
+            </div>
+        </Router>
+    );
 }
-
-export default App;
