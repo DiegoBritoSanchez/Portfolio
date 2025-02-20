@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Header() {
   return (
     <header className="bg-DarkOrchid text-white sticky top-0 shadow-md">
@@ -8,14 +10,30 @@ export default function Header() {
         </div>
         {/* Menú */}
         <ul className="flex space-x-6">
-          {["Home", "Acerca de Mi", "Contacto"].map((item) => (
-            <li
-              key={item}
-              className="hover:text-gray-300 transition-colors cursor-pointer text-lg font-medium"
+          <li>
+            <Link
+              to="/"
+              className="text-gray-100 hover:text-gray-300 transition-colors cursor-pointer text-lg font-medium"
             >
-              {item}
-            </li>
-          ))}
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/about"
+              className="text-gray-100 hover:text-gray-300 transition-colors cursor-pointer text-lg font-medium"
+            >
+              Acerca de Mi
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/contact"
+              className="text-gray-100 hover:text-gray-300 transition-colors cursor-pointer text-lg font-medium"
+            >
+              Contacto
+            </Link>
+          </li>
         </ul>
       </nav>
     </header>

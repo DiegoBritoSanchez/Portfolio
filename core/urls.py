@@ -1,8 +1,6 @@
 from django.urls import path
-from . import views
+from .views import profile_view
 
 urlpatterns = [
-    path('', views.home, name='home'),
-    path('sobre-mi/', views.about, name='about'),
-    path('contacto/', views.contact, name='contact'),
+    path('', profile_view, name='profile'),  # API para el perfil
 ]

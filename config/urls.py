@@ -5,9 +5,9 @@ from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('core.urls')),  # Incluimos las rutas de core
-    path('projects/', include('projects.urls')),  # Incluimos las rutas de projects
+    path("admin/", admin.site.urls),
+    path("api/profile/", include("core.urls")),  # Incluimos las rutas de core
+    path("api/projects/", include("projects.urls")),  # Incluimos las rutas de projects
 ]
 
 if settings.DEBUG:
