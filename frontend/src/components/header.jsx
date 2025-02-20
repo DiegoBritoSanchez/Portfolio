@@ -6,7 +6,13 @@ export default function Header() {
       <nav className="container mx-auto flex items-center py-4 px-6">
         {/* Logo */}
         <div className="mr-6">
-          <div className="w-10 h-10 bg-white rounded-md"></div>
+          <div>
+            <img
+              src="/chrome-192x192.png"
+              alt="Logo"
+              className="w-10 h-10 rounded-md"
+            />
+          </div>
         </div>
         {/* Menú */}
         <ul className="flex space-x-6">
