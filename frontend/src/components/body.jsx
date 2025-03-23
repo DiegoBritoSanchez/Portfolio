@@ -5,7 +5,7 @@ export default function Body() {
 
   // Fetch de datos al cargar el componente
   useEffect(() => {
-    fetch("http://localhost:8000/api/projects/") // URL del backend
+    fetch(fetch(`${import.meta.env.VITE_API_URL}/api/projects/`) // URL del backend
       .then((response) => response.json())
       .then((data) => setProjects(data)) // Guardar los datos en el estado
       .catch((error) => console.error("Error fetching projects:", error));
