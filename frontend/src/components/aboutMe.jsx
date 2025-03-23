@@ -26,7 +26,8 @@ export default function AboutMe() {
           {/* Botón para descargar CV */}
           {profile.cv && (
             <a
-              href={`http://localhost:8000/media/${profile.cv}`}
+              // href={`http://localhost:8000/media/${profile.cv}`} // URL local
+              href={`${import.meta.env.VITE_API_URL}${profile.cv}`} // URL del backend
               className="mt-4 inline-block bg-DarkOrchid text-white py-2 px-6 rounded-lg hover:bg-purple-700 hover:text-white transition"
               download
             >

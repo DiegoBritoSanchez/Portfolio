@@ -31,7 +31,8 @@ export default function Body() {
                 {/* Imagen */}
                 {project.image && (
                   <img
-                    src={`http://localhost:8000${project.image}`}
+                    // src={`http://localhost:8000${project.image}`}  // URL local
+                    src={`${import.meta.env.VITE_API_URL}${project.image}`} // URL del backend
                     alt={project.title}
                     className="w-full md:w-1/3 h-40 object-cover rounded-lg"
                   />
