@@ -144,5 +144,5 @@ if not DEBUG:
 # Configuración de CORS
 # CORS_ALLOW_ALL_ORIGINS = True # True para permitir todas las peticiones en desarrollo
 CORS_ALLOWED_ORIGINS = [
-    "https://portfolio-diego-brito-sanchez-xz8f.onrender.com",  # Dirección del frontend (React) cambiar cuando esté en producción
+    r"^https://portfolio-diego-brito-sanchez.*\.onrender\.com$",  # Dirección del frontend (React) cambiar cuando esté en producción
 ]
