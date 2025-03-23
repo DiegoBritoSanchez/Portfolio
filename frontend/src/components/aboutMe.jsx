@@ -4,7 +4,7 @@ export default function AboutMe() {
   const [profile, setProfile] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:8000/api/profile/")
+    fetch(`${import.meta.env.VITE_API_URL}/api/profile/`)
       .then((response) => response.json())
       .then((data) => setProfile(data))
       .catch((error) => console.error("Error fetching profile:", error));
