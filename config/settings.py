@@ -136,8 +136,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+if not DEBUG:
+    STATIC_ROOT = BASE_DIR / "staticfiles"
+    MEDIA_ROOT = BASE_DIR / "media"  # opcional si ya lo tienes más arriba
+
+
 # Configuración de CORS
-CORS_ALLOW_ALL_ORIGINS = True # True para permitir todas las peticiones en desarrollo
-# CORS_ALLOWED_ORIGINS = [
-#     "http://127.0.0.1:5173",  # Dirección del frontend (React) cambiar cuando esté en producción
-# ]
+# CORS_ALLOW_ALL_ORIGINS = True # True para permitir todas las peticiones en desarrollo
+CORS_ALLOWED_ORIGINS = [
+    "https://portfolio-frontend.onrender.com",  # Dirección del frontend (React) cambiar cuando esté en producción
+]
