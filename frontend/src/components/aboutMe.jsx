@@ -20,7 +20,7 @@ export default function AboutMe() {
       <div className="container mx-auto">
         <h2 className="text-3xl font-bold text-center mb-6">Sobre mí</h2>
 
-        <div className="bg-white p-6 rounded-lg shadow-md max-w-6xl mx-auto text-center">
+        <div className="bg-white p-6 rounded-lg shadow-md max-w-6xl mx-auto">
           <h3 className="text-xl font-bold">{profile.name}</h3>
           <ReactMarkdown className="text-gray-700 mt-2 text-justify">
             {profile.bio}
