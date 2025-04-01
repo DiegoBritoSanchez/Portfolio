@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import ReactMarkdown from "react-markdown";
 
 export default function AboutMe() {
   const [profile, setProfile] = useState(null);
@@ -21,7 +22,9 @@ export default function AboutMe() {
 
         <div className="bg-white p-6 rounded-lg shadow-md max-w-6xl mx-auto text-center">
           <h3 className="text-xl font-bold">{profile.name}</h3>
-          <p className="text-gray-700 mt-2 text-justify">{profile.bio}</p>
+          <ReactMarkdown className="text-gray-700 mt-2 text-justify">
+            {profile.bio}
+          </ReactMarkdown>
 
           {/* Botón para descargar CV */}
           {profile.cv && (
