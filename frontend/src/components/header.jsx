@@ -32,14 +32,6 @@ export default function Header() {
               Acerca de Mi
             </Link>
           </li>
-          <li>
-            <Link
-              to="/contact"
-              className="text-gray-100 hover:text-gray-300 transition-colors cursor-pointer text-lg font-medium"
-            >
-              Contacto
-            </Link>
-          </li>
         </ul>
       </nav>
     </header>
